@@ -1,0 +1,60 @@
+.practorial-container {
+  padding: 0.5rem 1rem;
+  background-color: #f5f9fd;
+  min-height: 100vh;
+}
+
+.practorial-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.practorial-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f29100;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.practorial-table-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.practorial-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.practorial-table thead {
+  background-color: #083c6c;
+  color: #ffffff;
+}
+
+.practorial-table th,
+.practorial-table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.practorial-table tbody tr:nth-child(even) {
+  background-color: #f7faff;
+}
+
+.practorial-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.3s ease;
+}

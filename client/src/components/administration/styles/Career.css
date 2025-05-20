@@ -1,0 +1,109 @@
+.career-section-container {
+  padding: 2rem 1rem;
+  background-color: #f3f6fb;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.career-section-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.career-section-heading::after {
+  content: '';
+  width: 90px;
+  height: 4px;
+  background-color: #f29100;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.career-section-table-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.career-section-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  table-layout: auto;
+}
+
+.career-section-table thead {
+  background-color: #0a2c58;
+  color: #ffffff;
+}
+
+.career-section-table th,
+.career-section-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.career-section-table th {
+  font-weight: 600;
+}
+
+.career-section-table td {
+  font-weight: 500;
+}
+
+.career-section-table tbody tr:nth-child(even) {
+  background-color: #f8fbff;
+}
+
+.career-section-table tbody tr:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .career-section-heading {
+    font-size: 2rem;
+  }
+
+  .career-section-table th,
+  .career-section-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-section-table thead {
+    display: none;
+  }
+
+  .career-section-table,
+  .career-section-table tbody,
+  .career-section-table tr,
+  .career-section-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .career-section-table tr {
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .career-section-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}

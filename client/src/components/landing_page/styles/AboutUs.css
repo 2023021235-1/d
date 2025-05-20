@@ -1,0 +1,88 @@
+/* src/styles/AboutUs.css */
+
+.auAboutSection_9f7x {
+  background-color: #f8f9fa; /* Light grey background for the section */
+  max-width: 100vw;
+  margin: 30px auto; /* Increased top/bottom margin for better spacing */
+  padding: 30px; /* Increased padding for more inner space */
+  border-radius: 10px; /* Slightly rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+  text-align: justify;
+}
+
+.about {
+  background:  #FFA500; /* Keep your brand color */
+  border-top-left-radius: 10px; /* Match section border-radius */
+  border-top-right-radius: 10px; /* Match section border-radius */
+  padding: 0px 10px 10px 10px; /* Add some horizontal padding */
+  margin-bottom: 5px; /* Space between the colored bar and the heading */
+}
+
+.auHeadingLeft_9f7x {
+  text-align: left;
+  font-size: 2.5rem; /* Slightly larger heading */
+  color: white; /* White text on the orange background */
+  margin-bottom: 0; /* Remove default bottom margin */
+  padding-bottom: 0; /* Remove default bottom padding */
+  border-bottom: none; /* Remove the green border */
+  font-weight: 600; /* Make the heading bolder */
+}
+
+.auFlexContainer_9f7x {
+  display: flex;
+  gap: 40px; /* Increased gap for better separation */
+  justify-content: space-between; /* Distribute space more evenly */
+  align-items: flex-start;
+  min-height: auto;
+}
+
+.auLeftColumn_9f7x {
+  flex: 0 0 50%; /* Slightly wider left column */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: space-between;
+  
+   /* Increased gap */
+}
+
+.auRightColumn_9f7x {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap */
+  padding: 0px; /* Increased padding */
+  background-color: #fff; /* White background for the services section */
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 8px; /* Slightly more rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.auAboutContainer_9f7x {
+  background-color: #fff;
+  border-radius: 8px; /* Slightly more rounded corners */
+  padding: 20px; /* Increased padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border: 1px solid #ddd; /* Lighter border */
+}
+
+.auBody_9f7x {
+  font-size: 1.1rem; /* Slightly larger body text */
+  line-height: 1.8; /* Improved line height for readability */
+  color: #495057; /* Darker grey for better contrast */
+  text-align: left;
+}
+
+/* Media query adjustments remain similar but with slightly adjusted gaps */
+@media (max-width: 768px) {
+  .auFlexContainer_9f7x {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .auLeftColumn_9f7x,
+  .auRightColumn_9f7x {
+    width: 100%;
+    flex: none;
+  }
+}

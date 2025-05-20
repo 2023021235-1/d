@@ -1,0 +1,462 @@
+/* Navbar.css */
+
+.navbar-container {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.indian-bg {
+    background-color: #fff;
+    color: #333;
+}
+
+.ticker {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 32px;
+    overflow: hidden;
+}
+
+.news-title {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.news-title img {
+    margin-right: 5px;
+}
+
+.news {
+    flex-grow: 1;
+}
+
+.news-content {
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.news-content a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.news-content a:hover {
+    color: #eee;
+}
+
+.news-content a img {
+    margin-right: 8px;
+    width: 24px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.indian-nav {
+    /* Inherits background and color from .indian-bg */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.college-logo {
+    height: 80px;
+    width: fit-content;
+}
+
+.navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    color: #333;
+    z-index: 300;
+}
+
+.navbar-links-row {
+    background-color: #ffa250;
+    padding: 8px 20px;
+    border-top: 1px solid #e0e0e0;
+    display: block;
+    width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 15px;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.4, 0.2, 0, 1);
+    transform-origin: left;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-icon {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown-icon {
+    position: relative;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+.dropdown .dropdown-icon {
+    transform: rotate(0deg);
+}
+
+.dropdown.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute; /* Default for desktop */
+    top: calc(100% + 4px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 1000;
+    min-width: 220px;
+    padding: 5px 0;
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background-color: #eee;
+    color: #000;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu > .dropdown-menu {
+    left: 100%; /* Default for desktop submenus */
+    top: 0;
+    margin-top: -1px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    display: none;
+}
+
+.submenu.open > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.submenu .dropdown-toggle::after {
+    content: "\25B8"; /* Right arrow for submenu */
+    margin-left: 5px;
+}
+
+.navbar-affiliations {
+    display: flex;
+    align-items: center;
+}
+
+.affiliation-logo {
+    height: 60px;
+    width: fit-content;
+    margin-left: 15px;
+}
+
+.desktop-affiliations {
+    display: flex;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 992px) {
+    .navbar-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 10px;
+        align-items: center;
+    }
+    
+
+    .nav-item {
+        margin: 0 3px;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 8px;
+        font-size: 0.8rem;
+        align-items: center;
+    }
+
+    .college-name {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    .navbar-logo {
+        margin-left: 40px;
+        margin-right: auto;
+    }
+
+    .college-name {
+        font-size: 1.2rem;
+    }
+
+    .college-logo {
+        height: 50px;
+        width: fit-content;
+    }
+
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2000;
+    }
+
+    .navbar-links-row {
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 3000;
+        padding-top: 60px;
+        overflow-y: auto;
+    }
+
+    .navbar-links-row.open {
+        transform: translateX(0);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 40px;
+        padding-left: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+        width: 100%;
+        align-items: flex-start;
+        height: auto;
+        /* FIX: Ensure relative positioning for dropdowns to sit below their parent */
+        position: relative; /* Already there, but confirm it's not being overridden */
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        color: #050505;
+        padding: 10px 0;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .dropdown-menu {
+        /* FIX: Reset positioning for mobile to flow normally */
+        position: static; /* KEY CHANGE: Removes absolute positioning */
+        left: auto; /* Ensure left property is reset */
+        top: auto; /* Ensure top property is reset */
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-top: 0;
+        padding-left: 20px;
+        box-shadow: none;
+        max-width: none;
+    }
+
+    .dropdown-menu.open {
+        display: flex;
+    }
+
+    .dropdown-item {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+
+    .submenu {
+        position: relative;
+        width: 100%;
+    }
+
+    .submenu > .dropdown-menu {
+        /* FIX: Apply same positioning reset for submenus in mobile */
+        position: static; /* KEY CHANGE: Removes absolute positioning */
+        left: auto; /* Ensure left property is reset */
+        top: auto; /* Ensure top property is reset */
+        margin-top: 0;
+        border-radius: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        padding-left: 20px; /* Further indent sub-submenu items */
+    }
+
+    .submenu.open > .dropdown-menu {
+        display: flex;
+    }
+
+    .desktop-affiliations {
+        display: none;
+    }
+
+    .navbar-affiliations {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .affiliation-logo {
+        display: none;
+    }
+
+    .navbar-toggler {
+        z-index: 4000;
+    }
+
+    .sticky-nav {
+        position: relative;
+    }
+}

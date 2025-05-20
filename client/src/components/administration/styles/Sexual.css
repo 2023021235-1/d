@@ -1,0 +1,108 @@
+.sexual-committee-container {
+  padding: 0.5rem 1rem;
+  background-color: #f3f6fb;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.sexual-committee-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.sexual-committee-heading::after {
+  content: '';
+  width: 90px;
+  height: 4px;
+  background-color: #f29100;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.sexual-committee-table-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.sexual-committee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.sexual-committee-table thead {
+  background-color: #0a2c58;
+  color: #ffffff;
+}
+
+.sexual-committee-table th,
+.sexual-committee-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sexual-committee-table th {
+  font-weight: 600;
+}
+
+.sexual-committee-table td {
+  font-weight: 500;
+}
+
+.sexual-committee-table tbody tr:nth-child(even) {
+  background-color: #f8fbff;
+}
+
+.sexual-committee-table tbody tr:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sexual-committee-heading {
+    font-size: 2rem;
+  }
+
+  .sexual-committee-table th,
+  .sexual-committee-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sexual-committee-table thead {
+    display: none;
+  }
+
+  .sexual-committee-table,
+  .sexual-committee-table tbody,
+  .sexual-committee-table tr,
+  .sexual-committee-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .sexual-committee-table tr {
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .sexual-committee-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}

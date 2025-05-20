@@ -1,0 +1,507 @@
+/* styles/BSC.css - Styled like BA.css */
+
+/* Import or define variables from BA.css's :root */
+/* It's generally better practice to define shared variables in a separate file
+   like _variables.css and import them into both BA.css and BSC.css.
+   For this example, I'll include the variables directly for completeness,
+   assuming they aren't globally available otherwise. */
+:root {
+  /* Core Branding - Keeping your palette */
+  --brand-primary: #1a535c; /* Deep Teal/Green */
+  --brand-secondary: #4ecdc4; /* Lighter Minty Green */
+  --brand-accent: #ff6b6b;   /* Soft Coral/Terracotta Accent */
+
+  /* Neutral Palette - Refined (from the revised BA.css) */
+  --surface: #ffffff;
+  --surface-alt: #f0f4f8; /* Slightly more distinct light gray for background */
+  --surface-muted: #dbe2ef; /* Lighter gray for borders, dividers */
+
+  /* Text Palette (from the revised BA.css) */
+  --text-main: #2d3a46; /* Darker, softer black for primary text */
+  --text-muted: #5a6773; /* Medium gray for secondary text */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+
+  /* Shadows - Subtle and modern (from the revised BA.css) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  /* Typography (from the revised BA.css) */
+  --font-header: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing (from the revised BA.css) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Transitions & Borders (from the revised BA.css) */
+  --transition-speed: 0.4s;
+  --transition-timing: ease-in-out;
+  --transition-main: all var(--transition-speed) var(--transition-timing);
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px; /* Slightly larger for softer look */
+  --border-radius-lg: 20px;
+}
+
+/* Global Reset & Base Styles - Copy from BA.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface-alt);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Wrapper & Layout - Adapted from BA.css */
+.bsc-wrapper {
+  max-width: 1200px; /* Consistent with BA wrapper */
+  margin: var(--space-xxl) auto; /* Consistent vertical spacing */
+  padding: 0 var(--space-md); /* Horizontal padding for smaller screens */
+  /* Remove background-color here if body already has it */
+  /* background-color: var(--surface-alt); */
+  display: flex; /* Use flex for header/card stacking */
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg); /* Gap between header and card */
+}
+
+/* Header Section - Adapted from BA.css */
+.bsc-header {
+  text-align: center;
+  margin-bottom: var(--space-lg); /* Less margin as gap is on wrapper */
+  animation: fadeInDown 0.8s var(--transition-timing) forwards;
+  /* Remove width and margin auto if wrapper is handling centering */
+  /* width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.bsc-header h1 {
+  font-family: var(--font-header);
+  /*AdjustsizeslightlyifneededforB.Sc.titlelength*/font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-sm);
+  /*Reducedmarginbelowh1*/letter-spacing: -0.8px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color: #ffa000;
+  -moz-text-decoration-color: #ffa000;
+}
+
+/* Card Container - Main Content Block - Adapted from BA.css */
+.bsc-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius-md); /* Consistent radius */
+  padding: var(--space-xl) var(--space-xl); /* Consistent padding */
+  box-shadow: var(--shadow-lg); /* Consistent shadow */
+  transition: var(--transition-main); /* Consistent transition */
+  animation: fadeInUp 0.8s var(--transition-timing) 0.2s backwards; /* Consistent animation */
+  border: 1px solid var(--surface-muted); /* Consistent border */
+  width: 100%; /* Ensure it takes full wrapper width */
+  max-width: 1200px; /* Max width from your original BSC.css */
+}
+
+.bsc-header p {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem); /* Responsive */
+  color: var(--text-muted);
+  max-width: 750px; /* Optimal reading width */
+  /* margin: 0 auto 1rem auto; Centering and bottom margin */
+  line-height: 1.5;
+}
+
+/* Content Area within Card */
+.bsc-content {
+   /* Apply general text styles from BA card p */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  text-align: left; /* Align content left */
+}
+
+.bsc-content strong {
+  color: var(--brand-primary); /* Consistent strong color */
+  font-weight: 700; /* Consistent strong weight */
+}
+
+
+/* Subject Groups List - Adapted from BA subject grid list items */
+.bsc-subject-groups {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+  margin: var(--space-lg) 0; /* Spacing above and below list */
+}
+
+.bsc-subject-groups li {
+  position: relative;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg); /* Space for checkmark */
+  margin-bottom: var(--space-sm); /* Space between list items */
+  color: var(--text-main); /* Main text color */
+  font-weight: 600; /* Slightly bolder text */
+  border-bottom: 1px dashed var(--surface-muted); /* Subtle separator */
+  line-height: 1.5;
+}
+
+.bsc-subject-groups li:last-child {
+    border-bottom: none; /* Remove border on the last item */
+    margin-bottom: 0;
+}
+
+
+.bsc-subject-groups li::before {
+  content: '✔'; /* Keep the checkmark */
+  position: absolute;
+  left: 0;
+  top: var(--space-sm); /* Align checkmark with text */
+  color: #ffa000; /* Use secondary brand color for checkmark */
+  font-weight: bold;
+  font-size: 1.1rem; /* Adjust size if needed */
+}
+
+.bsc-subject-groups strong {
+    color: var(--brand-primary); /* Make subject names prominent */
+    font-weight: 700;
+}
+
+/* Divider - Styled like the h2 underline from BA.css */
+.bsc-divider {
+  margin: var(--space-xl) auto; /* Centered and good vertical space */
+  border: none;
+  border-top: 4px solid #ffa000; /* Thicker, prominent divider */
+  width: 80px; /* Consistent with h2 underline width */
+  border-radius: 2px;
+}
+
+/* Details Section */
+.bsc-details {
+    margin-bottom: var(--space-lg); /* Space below details */
+}
+
+.bsc-details p {
+  margin: var(--space-xs) 0; /* Space between detail lines */
+  color: var(--text-main); /* Use main text color */
+  font-size: 1.05rem; /* Slightly smaller than main content text */
+  line-height: 1.5;
+}
+
+.bsc-details strong {
+    color: var(--brand-primary); /* Consistent strong color */
+}
+
+
+/* Admission Process Section - Adapted heading and list styling */
+.bsc-admission {
+    margin-bottom: var(--space-lg); /* Space below admission */
+}
+
+.bsc-admission h3 { /* Styled similar to BA card h2, but smaller */
+  font-family: var(--font-header);
+  font-size: clamp(1.6rem, 3.5vw, 1.9rem);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-md); /* Space below heading */
+  font-weight: 700;
+}
+
+.bsc-admission ol {
+  padding-left: var(--space-lg); /* Indent the ordered list */
+  color: var(--text-muted); /* Muted text for list items */
+  line-height: 1.6;
+}
+
+.bsc-admission ol li {
+    margin-bottom: var(--space-xs); /* Space between list items */
+}
+
+
+/* CTA Buttons - Styled to match BA aesthetic */
+.bsc-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md); /* Gap between buttons */
+  margin: var(--space-xl) 0; /* Vertical space around buttons */
+  justify-content: center; /* Center buttons */
+}
+
+.bsc-btn {
+  background-color: var(--brand-primary);
+  color: var(--text-on-primary);
+  padding: var(--space-sm) var(--space-md); /* Button padding */
+  border-radius: var(--border-radius-sm); /* Button border-radius */
+  font-size: 1.1rem; /* Button font size */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-main);
+  min-width: 180px; /* Ensure minimum button width */
+  text-align: center;
+}
+
+.bsc-btn:hover {
+  background-color: #154147; /* Darker primary on hover */
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: var(--shadow-sm);
+}
+
+.bsc-btn.outline {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+}
+
+.bsc-btn.outline:hover {
+  background-color:  #ffa000;
+  color: var(--text-on-primary);
+  border-color:  #ffa000;
+  transform: translateY(-2px);
+   box-shadow: var(--shadow-sm);
+}
+
+
+/* Contact Section */
+.bsc-contact {
+  text-align: center;
+  font-size: 1rem; /* Slightly larger contact text */
+  margin-top: var(--space-lg); /* Space above contact info */
+  color: var(--text-muted);
+}
+
+.bsc-contact a {
+  color: var(--brand-primary); /* Link color */
+  text-decoration: underline; /* Underline links */
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.bsc-contact a:hover {
+  color: var(--brand-secondary); /* Change color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+
+/* Animations - Copy from BA.css */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Adjustments - Adapted from BA.css */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .bsc-wrapper {
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bsc-card {
+    padding: var(--space-xl);
+  }
+
+  .bsc-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  .bsc-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .bsc-admission h3 {
+     font-size: clamp(1.4rem, 4vw, 1.7rem);
+  }
+
+  .bsc-btn {
+     padding: 0.6rem 1.2rem;
+     font-size: 1rem;
+     min-width: 160px;
+  }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (max-width: 768px) {
+  .bsc-wrapper {
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-md);
+  }
+
+  .bsc-header h1 {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+
+  .bsc-card {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .bsc-content {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .bsc-subject-groups li {
+     padding-left: var(--space-lg);
+     font-size: 0.95rem;
+  }
+
+  .bsc-subject-groups li::before {
+     top: var(--space-sm);
+     font-size: 1rem;
+  }
+
+  .bsc-divider {
+    margin: var(--space-lg) auto;
+  }
+
+  .bsc-details p {
+    font-size: 1rem;
+  }
+
+   .bsc-admission h3 {
+     font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+
+  .bsc-admission ol {
+    padding-left: var(--space-md);
+  }
+
+  .bsc-cta {
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+  }
+
+  .bsc-btn {
+     padding: 0.7rem 1.4rem;
+     font-size: 0.95rem;
+     min-width: 140px;
+  }
+
+  .bsc-contact {
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .bsc-wrapper {
+    margin: var(--space-md) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .bsc-header h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .bsc-card {
+    padding: var(--space-md);
+  }
+
+  .bsc-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .bsc-subject-groups li {
+     padding-left: var(--space-md);
+     font-size: 0.9rem;
+     margin-bottom: var(--space-xs);
+  }
+
+  .bsc-subject-groups li::before {
+     top: var(--space-sm);
+     font-size: 0.95rem;
+  }
+
+  .bsc-divider {
+     margin: var(--space-md) auto;
+     width: 60px;
+     border-top-width: 3px;
+  }
+
+  .bsc-details p {
+    font-size: 0.9rem;
+  }
+
+  .bsc-details {
+    margin-bottom: var(--space-md);
+  }
+
+  .bsc-admission h3 {
+    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .bsc-admission ol {
+    padding-left: var(--space-md);
+     line-height: 1.5;
+     margin-bottom: var(--space-md);
+  }
+
+  .bsc-admission ol li {
+     margin-bottom: var(--space-xs);
+  }
+
+  .bsc-cta {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+
+  .bsc-btn {
+    width: 90%; /* Make buttons take most of the width */
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: auto; /* Remove min-width to allow full width */
+  }
+
+  .bsc-contact {
+    font-size: 0.85rem;
+    margin-top: var(--space-md);
+  }
+}

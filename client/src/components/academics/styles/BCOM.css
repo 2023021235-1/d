@@ -1,0 +1,427 @@
+/* styles/BCOM.css - Styled like BA.css and BSC.css */
+
+/* Import fonts - It's better to do this once in your main index.html or app CSS */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap'); */
+
+/* Define variables from a shared file if available.
+   For this example, including them directly for completeness. */
+:root {
+  /* Core Branding - Consistent palette */
+  --brand-primary: #1a535c; /* Deep Teal/Green */
+  --brand-secondary: #4ecdc4; /* Lighter Minty Green */
+  --brand-accent: #ff6b6b;   /* Soft Coral/Terracotta Accent */
+
+  /* Neutral Palette - Consistent */
+  --surface: #ffffff;
+  --surface-alt: #f0f4f8; /* Slightly more distinct light gray for background */
+  --surface-muted: #dbe2ef; /* Lighter gray for borders, dividers */
+
+  /* Text Palette - Consistent */
+  --text-main: #2d3a46; /* Darker, softer black for primary text */
+  --text-muted: #5a6773; /* Medium gray for secondary text */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+
+  /* Shadows - Consistent */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  /* Typography - Consistent */
+  --font-header: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing - Consistent */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Transitions & Borders - Consistent */
+  --transition-speed: 0.4s;
+  --transition-timing: ease-in-out;
+  --transition-main: all var(--transition-speed) var(--transition-timing);
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 20px;
+
+  /* Button Variables - Consistent with BSC */
+  --btn-primary-bg: var(--brand-primary);
+  --btn-primary-color: var(--text-on-primary);
+  --btn-secondary-bg: var(--brand-secondary);
+  --btn-secondary-color: var(--text-on-primary); /* Use text-on-primary for secondary button text */
+}
+
+/* Global Reset & Base Styles - Consistent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface-alt);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Wrapper & Layout - Consistent with BA/BSC */
+.bcom-wrapper {
+  max-width: 1200px;
+  margin: var(--space-xxl) auto; /* Consistent vertical spacing */
+  padding: 0 var(--space-md); /* Horizontal padding for smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg); /* Gap between title and card */
+}
+
+/* Page Title (outside card) - Styled like the main headers */
+.bcom-page-title {
+  font-family: var(--font-header);
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  /*Consistentheadingsize*/color: var(--brand-primary);
+  margin-bottom: var(--space-lg);
+  /*Spacebelowtitle*/letter-spacing: -0.8px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  animation: fadeInDown 0.8s var(--transition-timing) forwards;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color:  #ffa000;
+
+}
+
+
+/* Card Container - Main Content Block - Consistent with BA/BSC */
+.bcom-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xl) var(--space-xl); /* Consistent padding */
+  box-shadow: var(--shadow-lg); /* Consistent shadow */
+  transition: var(--transition-main); /* Consistent transition */
+  animation: fadeInUp 0.8s var(--transition-timing) 0.2s backwards; /* Consistent animation */
+  border: 1px solid var(--surface-muted); /* Consistent border */
+  width: 100%; /* Ensure it takes full wrapper width */
+  max-width: 1200px; /* Max width from your original BCOM.css */
+  display: flex; /* Use flex to space out sections */
+  flex-direction: column;
+  gap: var(--space-xl); /* Gap between sections inside the card */
+}
+
+/* Intro Section Paragraphs - Consistent with BA/BSC content paragraphs */
+.bcom-intro p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted); /* Use muted text color for body */
+  margin-bottom: var(--space-md); /* Space between paragraphs */
+  text-align: left; /* Align text left */
+}
+
+.bcom-intro p:last-child {
+    margin-bottom: 0; /* Remove bottom margin on the last paragraph in intro */
+}
+
+/* Highlights Section Heading - Consistent with h2 inside cards */
+.bcom-highlights h2 {
+  font-family: var(--font-header);
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-lg); /* Space below heading */
+  font-weight: 700;
+  position: relative;
+  padding-bottom: var(--space-sm); /* Space for the underline */
+  text-align: left;
+}
+
+.bcom-highlights h2::after { /* Consistent underline effect */
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--brand-secondary);
+  border-radius: 2px;
+}
+
+/* Highlights List */
+.bcom-highlights ul {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+  margin: 0;
+}
+
+.bcom-highlights ul li {
+  position: relative;
+  padding-left: var(--space-lg); /* Space for custom bullet */
+  margin-bottom: var(--space-sm); /* Space between list items */
+  color: var(--text-main); /* Use main text color for list items */
+  font-size: 1.05rem; /* Slightly smaller font for list items */
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.bcom-highlights ul li::before { /* Custom bullet point */
+    content: '•'; /* Or use a different character like '\2022' or an SVG */
+    position: absolute;
+    left: 0;
+    top: 0; /* Align bullet with the top of the text */
+    color: var(--brand-secondary); /* Use secondary brand color for bullet */
+    font-weight: bold;
+    font-size: 1.2em; /* Adjust size relative to parent font size */
+    line-height: inherit; /* Inherit line height for vertical alignment */
+}
+
+.bcom-highlights ul li:last-child {
+    margin-bottom: 0; /* Remove bottom margin on the last list item */
+}
+
+
+/* CTA Buttons - Consistent with BSC */
+.bcom-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md); /* Gap between buttons */
+  margin-top: var(--space-lg); /* Space above buttons */
+  justify-content: center; /* Center buttons */
+}
+
+.btn-primary, .btn-secondary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: var(--space-sm) var(--space-md); /* Consistent button padding */
+  border-radius: var(--border-radius-sm); /* Consistent button border-radius */
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-main);
+  box-shadow: var(--shadow-sm); /* Consistent button shadow */
+  min-width: 180px; /* Ensure minimum button width */
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #154147; /* Darker primary on hover */
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: var(--shadow-md); /* Increase shadow on hover */
+}
+
+.btn-secondary {
+  /* Use outline style similar to BSC outline button */
+  background-color: transparent;
+  color: var(--brand-primary); /* Primary color for text and border */
+  border: 2px solid var(--brand-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-secondary); /* Secondary color background on hover */
+  color: var(--text-on-primary); /* White text on hover */
+  border-color: var(--brand-secondary); /* Secondary color border on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* Animation - Consistent */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Adjustments - Consistent with BA/BSC */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .bcom-wrapper {
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bcom-page-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .bcom-card {
+    padding: var(--space-xl);
+    gap: var(--space-lg); /* Reduce gap between sections */
+  }
+
+  .bcom-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .bcom-highlights h2 {
+     font-size: clamp(1.6rem, 4vw, 2rem);
+     margin-bottom: var(--space-md);
+  }
+
+  .bcom-highlights ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn-primary, .btn-secondary {
+     padding: 0.6rem 1.2rem;
+     font-size: 1rem;
+     min-width: 160px;
+  }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (max-width: 768px) {
+  .bcom-wrapper {
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-md);
+  }
+
+  .bcom-page-title {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .bcom-card {
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-md); /* Reduce gap further */
+  }
+
+  .bcom-intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-sm);
+  }
+
+  .bcom-highlights h2 {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+  }
+
+  .bcom-highlights h2::after { /* Center the underline */
+     left: 50%;
+     transform: translateX(-50%);
+  }
+
+  .bcom-highlights ul li {
+     padding-left: var(--space-lg);
+     font-size: 0.95rem;
+     margin-bottom: var(--space-xs);
+  }
+
+  .bcom-highlights ul li::before {
+     top: 0;
+     font-size: 1.1em;
+  }
+
+  .bcom-cta {
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .btn-primary, .btn-secondary {
+     padding: 0.7rem 1.4rem;
+     font-size: 0.95rem;
+     min-width: 140px;
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .bcom-wrapper {
+    margin: var(--space-md) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .bcom-page-title {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .bcom-card {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bcom-intro p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-sm);
+  }
+
+  .bcom-highlights h2 {
+    font-size: clamp(1.4rem, 6vw, 1.7rem);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+  }
+
+  .bcom-highlights ul li {
+     padding-left: var(--space-md);
+     font-size: 0.9rem;
+     margin-bottom: var(--space-xs);
+  }
+
+   .bcom-highlights ul li::before {
+     top: 0;
+     font-size: 1em;
+   }
+
+  .bcom-cta {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 90%; /* Make buttons take most of the width */
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+}

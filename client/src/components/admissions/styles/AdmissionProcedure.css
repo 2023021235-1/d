@@ -1,0 +1,111 @@
+.admission-container {
+  font-family: 'Poppins', sans-serif;
+ background-color:  #eef2f3;
+  min-height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admission-title {
+text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.admission-title::after{
+   content: "";
+  display: block;
+  width: 80px;
+  height: 3px; /* Thinner orange line */
+  background-color: #f29100;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.admission-content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.admission-section {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.admission-section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ffa000;
+  padding-bottom: 5px;
+}
+
+.admission-section-paragraph {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.admission-section-list {
+  padding-left: 20px;
+}
+
+.admission-section-list-item {
+  font-size: 15.5px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: justify; /* ✅ added for justification */
+}
+
+.important-note {
+  background-color: #fff3f3;
+  border: 1px solid #f2bebe;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #b71c1c;
+  font-weight: 500;
+  text-align: justify; /* ✅ added for justification */
+}
+
+.admission-subheading {
+  margin-top: 20px;
+  display: block;
+  color: #3f51b5;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: justify; /* ✅ added for consistency */
+}
+
+/* Optional: pastel backgrounds for each section (if used) */
+/* .section-light-blue { background-color: #e3f2fd; }
+.section-light-yellow { background-color: #fffde7; }
+.section-light-pink { background-color: #fce4ec; }
+.section-light-green { background-color: #e8f5e9; }
+.section-light-purple { background-color: #ede7f6; } */
+
+@media screen and (max-width: 768px) {
+  .admission-title {
+    font-size: 30px;
+  }
+
+  .admission-content {
+    padding: 0 10px;
+  }
+
+  .admission-section {
+    padding: 20px;
+  }
+}

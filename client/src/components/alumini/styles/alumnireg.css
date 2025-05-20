@@ -1,0 +1,184 @@
+
+.alumni-page {
+  padding: 2rem;
+  background-color: #f4f6f8; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.alumni-title {
+ text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.alumni-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f29100; 
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.alumni-description {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify; 
+  margin-bottom: 2rem;
+  max-width: 90%; 
+  max-width: 1350px; 
+}
+
+.form-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  width: 95%; 
+  max-width: 1310px; 
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 150px 1fr; 
+  align-items: center; 
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0;
+  text-align: left;
+  padding-right: 1rem; 
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border-radius: 8px; 
+  border: 1px solid #ddd; 
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db; 
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.2); 
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.degree-highlight-label {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button {
+  background-color: #3498db; /* Blue primary button */
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+.alert {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #e6f9e6;
+  color: #2e8b57;
+  border: 1px solid #b8e3b8;
+}
+
+.alert-info {
+  background-color: #e7f5ff;
+  color: #1e90ff;
+  border: 1px solid #bde0fe;
+}
+
+.close-btn {
+   position: absolute;
+  top: -40px;
+  right: -670px;
+  /* background: #977cf0; */
+  /* color: white; */
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small-center-btn {
+  font-size: 1rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+}

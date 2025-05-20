@@ -1,0 +1,209 @@
+/* HeroSection.css */
+
+/* General Styles */
+.hs-college-website {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Carousel Styles */
+.hs-carousal {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  background-color: #323232;
+  display: flex; /* To position dots and buttons */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center dots horizontally */
+  justify-content: flex-end;
+  padding: 0px; /* Push dots to the bottom */
+}
+
+.hs-carouselBox {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Takes up the full height of the carousel */
+}
+
+.hs-carousel__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Scales the image to fill the container, cropping if necessary */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin: 0px;
+  padding: 0px;
+}
+
+.hs-carousel__photo.initial,
+.hs-carousel__photo.active {
+  opacity: 1;
+}
+
+/* Carousel Navigation Buttons */
+.hs-carousel__button--next,
+.hs-carousel__button--prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hs-carousel__button--next::after,
+.hs-carousel__button--prev::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #333;
+  border-right: 3px solid #333;
+}
+
+.hs-carousel__button--next {
+  right: 20px;
+}
+
+.hs-carousel__button--next::after {
+  transform: rotate(45deg);
+}
+
+.hs-carousel__button--prev {
+  left: 20px;
+}
+
+.hs-carousel__button--prev::after {
+  transform: rotate(-135deg);
+}
+
+/* Carousel Dots */
+/* Carousel Dots */
+.hs-carousel-dots {
+  position: absolute; /* Add absolute positioning */
+  bottom: 20px;      /* Position at the bottom */
+  left: 50%;        /* Move to the horizontal center */
+  transform: translateX(-50%); /* Adjust for the width of the dots container */
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  /* margin-bottom: 20px; Remove this as bottom positioning is now absolute */
+}
+
+.hs-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hs-carousel-dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Modal Styles */
+.hs-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hs-modal-dialog {
+  max-width: 90%;
+  width: 500px;
+}
+
+.hs-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hs-modal-content img {
+  width: 100%;
+  display: block;
+}
+
+.hs-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .hs-carousal {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hs-carousal {
+    height: 400px;
+  }
+
+  .hs-carousel__button--next,
+  .hs-carousel__button--prev {
+    width: 30px;
+    height: 30px;
+  }
+  .hs-carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-carousal {
+    height: 300px;
+  }
+  .hs-carousel__button--next,
+  .hs-carousel__button--prev {
+    width: 25px;
+    height: 25px;
+  }
+  .hs-modal-dialog {
+    width: 90%;
+  }
+
+  .hs-carousel-dots {
+    margin-bottom: 10px;
+  }
+  .hs-carousel-dot {
+    width: 6px;
+    height: 6px;
+  }
+}

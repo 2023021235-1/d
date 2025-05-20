@@ -1,0 +1,74 @@
+.alumniAssoc_headTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.alumniAssoc_headTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px; /* Thinner orange line */
+  background-color: #f29100;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.alumniAssoc_pageContent {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  padding: 30px 20px;
+}
+
+.alumniAssoc_table {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.alumniAssoc_table th {
+  background-color: #083c6c;
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.alumniAssoc_table td {
+  padding: 14px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.alumniAssoc_table tr:nth-child(even) td {
+  background-color: #f7faff;
+}
+
+.alumniAssoc_table tr:hover td {
+  background-color: #e3f2fd;
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.alumniAssoc_th_rightAlign {
+  text-align: right;
+}
+
+.alumniAssoc_td_rightAlign {
+  text-align: right;
+}

@@ -1,0 +1,161 @@
+/* ContactUs.css */
+
+/* Main container */
+.contact-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Page title */
+.contact-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.contact-title::after{
+   content: "";
+  display: block;
+  width: 80px;
+  height: 3px; /* Thinner orange line */
+  background-color: #f29100;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+/* Cards container */
+.contact-card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+/* Card styles */
+.contact-card {
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Map card specific styles */
+.map-card {
+  min-width: 500px;
+}
+
+/* Details card specific styles */
+.details-card {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card header */
+.card-header {
+  padding: 20px;
+  background-color: #083c6c;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: hsl(0, 20%, 98%);
+}
+
+/* Map container */
+.map-container {
+  height: 450px;
+  width: 100%;
+}
+
+/* Contact details container */
+.contact-details {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+/* Individual contact item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Icon containers with colored backgrounds */
+.icon-container {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-icon {
+  background-color: #e6f7ff;
+  color: #0077cc;
+}
+
+.email-icon {
+  background-color: #e6ffe6;
+  color: #00a651;
+}
+
+.address-icon {
+  background-color: #fff0e6;
+  color: #ff6b00;
+}
+
+/* Text content */
+.contact-text h3 {
+  font-size: 18px;
+  color: #555;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+.contact-text p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .map-card {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card-container {
+    flex-direction: column;
+  }
+  
+  .map-card {
+    min-width: 100%;
+  }
+  
+  .details-card {
+    min-width: 100%;
+  }
+}

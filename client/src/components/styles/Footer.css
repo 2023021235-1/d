@@ -1,0 +1,280 @@
+.footer { 
+  background-color:#0f172a; /* Dark navy */
+  color: #f8f9fa; /* Light text */
+  padding: 40px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #444;
+  padding-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 20px;
+  min-width: 220px;
+}
+
+/* Footer Logo Section - Responsive Logo + Text */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  flex-wrap: wrap;
+}
+
+.footer-logo-img {
+  height: 5rem;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.footer-logo-text .college-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.footer-logo-text .college-location {
+  font-size: 1.1rem;
+  color: #cccccc;
+  text-align: start;
+}
+
+/* Responsive stacking on small screens */
+@media (max-width: 600px) {
+  .footer-logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo-img {
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo-text .college-location {
+  font-size: 1.1rem;
+  color: #cccccc;
+  text-align: center;
+}
+}
+
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
+  display: block;
+  text-align: left;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%; /* full underline */
+  height: 2px;
+  background-color: #f26922;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+  color: #b15f0c;
+  text-align: left;
+}
+
+.footer-column ul li a {
+  color: #dee2e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #f26922;
+}
+
+.footer-contact-info {
+  font-style: normal;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.footer-contact-info a {
+  color: #f26922;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-info a:hover {
+  color: #ffa559;
+}
+
+/* SOCIAL ICON SECTION */
+.footer-social {
+  display: flex;
+  justify-content: flex-start; /* Options: flex-start, center, flex-end */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #f26922;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.footer-social-icon:hover {
+  background-color: #ffe0c4;
+  transform: translateY(-3px);
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Useful Links Section */
+.footer-link-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-link-columns ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.footer-link-columns ul li {
+  margin-bottom: 8px;
+}
+
+.footer-link-columns ul li a {
+  color: #bfbfbf;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link-columns ul li a:hover {
+  color: #f26922;
+}
+
+/* Optional: If you want to make the links' columns responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* full underline */
+    height: 2px;
+    background-color: #f26922;
+    text-align: left;
+  }
+
+  .footer-column {
+    width: 90%;
+    text-align: center;
+  }
+
+  .footer-column ul {
+    padding-left: 1.2rem;
+    text-align: left;
+  }
+
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+  }
+
+  .footer-contact-info {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-column ul li {
+    text-align: left;
+  }
+
+  .footer-logo img {
+    margin-right: 0px;
+  }
+
+  .footer-column h3 {
+    text-align: center;
+  }
+
+  .footer-column ul li {
+    text-align: center;
+  }
+
+  .footer-link-columns {
+    align-items: center;
+  }
+}

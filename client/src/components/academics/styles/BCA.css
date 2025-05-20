@@ -1,0 +1,454 @@
+/* styles/BCA.css - Styled like BA.css, BSC.css, and Ma.css */
+
+/* Import fonts - It's better to do this once in your main index.html or app CSS */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap'); */
+
+/* Define variables from a shared file if available.
+   For this example, including them directly for completeness. */
+:root {
+  /* Core Branding - Consistent palette */
+  --brand-primary: #1a535c; /* Deep Teal/Green */
+  --brand-secondary: #4ecdc4; /* Lighter Minty Green */
+  --brand-accent: #ff6b6b;   /* Soft Coral/Terracotta Accent */
+
+  /* Neutral Palette - Consistent */
+  --surface: #ffffff;
+  --surface-alt: #f0f4f8; /* Slightly more distinct light gray for background */
+  --surface-muted: #dbe2ef; /* Lighter gray for borders, dividers */
+
+  /* Text Palette - Consistent */
+  --text-main: #2d3a46; /* Darker, softer black for primary text */
+  --text-muted: #5a6773; /* Medium gray for secondary text */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+
+  /* Shadows - Consistent */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  /* Typography - Consistent */
+  --font-header: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing - Consistent */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Transitions & Borders - Consistent */
+  --transition-speed: 0.4s;
+  --transition-timing: ease-in-out;
+  --transition-main: all var(--transition-speed) var(--transition-timing);
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 20px;
+}
+
+/* Global Reset & Base Styles - Consistent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface-alt);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Wrapper & Layout - Consistent with BA/BSC/MA */
+.bca-wrapper {
+  max-width: 1200px; /* Consistent max-width */
+  margin: var(--space-xxl) auto; /* Consistent vertical spacing */
+  padding: 0 var(--space-md); /* Horizontal padding for smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg); /* Gap between header and content/card */
+}
+
+/* Header Section - Consistent with BA/BSC/MA */
+.bca-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  /*Lessmarginasgapisonwrapper*/animation: fadeInDown 0.8s var(--transition-timing) forwards;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color:  #ffa000;
+  
+}
+
+.bca-card p {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem); /* Responsive */
+  color: var(--text-muted);
+  /* max-width: 750px; Optimal reading width */
+  /* margin: 0 auto 1rem auto;  */
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.bca-header h1 {
+  font-family: var(--font-header);
+  font-size: clamp(2.8rem, 6vw, 4rem); /* Consistent heading size */
+  color: var(--brand-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.8px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Main Content Area (Wrapping the card and intro p) */
+.bca-content {
+    width: 100%; /* Ensure content takes full wrapper width */
+    max-width: 1200px; /* Max width for the content block */
+    display: flex; /* Use flex to stack intro p and card */
+    flex-direction: column;
+    gap: var(--space-xl); /* Gap between intro p and card */
+}
+
+
+/* Intro Paragraph - Consistent with other intro/content paragraphs */
+.bca-content > p { /* Target the direct child paragraph in bca-content */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  text-align: left;
+  margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+}
+
+.bca-content strong { /* Consistent strong tag style */
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+
+/* Card Container - Consistent with BA/BSC/MA */
+.bca-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xl) var(--space-xl); /* Consistent padding */
+  box-shadow: var(--shadow-lg); /* Consistent shadow */
+  transition: var(--transition-main); /* Consistent transition */
+  animation: fadeInUp 0.8s var(--transition-timing) 0.2s backwards; /* Consistent animation */
+  border: 1px solid var(--surface-muted); /* Consistent border */
+  width: 100%; /* Ensure card takes full content width */
+  display: flex; /* Use flex to space out sections inside card */
+  flex-direction: column;
+  gap: var(--space-xl); /* Gap between sections inside the card */
+}
+
+/* Sections inside Card (Details and Highlights) - Consistent with BSC/MA */
+.bca-details,
+.bca-highlights {
+  background-color: var(--surface-alt); /* Consistent background */
+  border: 1px solid var(--surface-muted); /* Consistent border */
+  border-radius: var(--border-radius-md); /* Consistent border-radius */
+  padding: var(--space-lg); /* Consistent padding */
+  margin-top: 0; /* Remove margin-top as gap handles spacing */
+}
+
+/* Section Headings (h2 and h3) - Consistent with BSC/MA */
+.bca-details h2,
+.bca-highlights h3 {
+  font-family: var(--font-header);
+  /* Adjust size slightly if needed */
+  font-size: clamp(1.6rem, 3.5vw, 1.9rem);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-md); /* Space below heading */
+  font-weight: 700;
+  position: relative;
+  padding-bottom: var(--space-sm); /* Space for the underline */
+  text-align: left;
+}
+
+.bca-details h2::after,
+.bca-highlights h3::after { /* Consistent underline effect */
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background-color:  #ffa000;
+  border-radius: 2px;
+}
+
+/* List Styling - Consistent with BSC/MA */
+.bca-details ul,
+.bca-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bca-details li,
+.bca-highlights li {
+  position: relative;
+  padding-left: var(--space-lg); /* Space for custom bullet/checkmark */
+  margin-bottom: var(--space-sm); /* Space between list items */
+  color: var(--text-main); /* Use main text color for list items */
+  font-size: 1.05rem; /* Consistent font size for list items */
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.bca-details li::before,
+.bca-highlights li::before { /* Consistent bullet/checkmark style */
+  content: '✓'; /* Or use '•' or another character */
+  position: absolute;
+  left: 0;
+  top: 0; /* Align with the top of the text */
+  color:  #ffa000;
+  font-weight: bold;
+  font-size: 1.1em; /* Adjust size relative to parent font size */
+  line-height: inherit;
+}
+
+.bca-details li:last-child,
+.bca-highlights li:last-child {
+    margin-bottom: 0; /* Remove bottom margin on the last list item */
+}
+
+
+/* Footer Note - Consistent with other footer/contact text */
+.bca-footer-note {
+  font-size: 1rem; /* Consistent font size */
+  color: var(--text-muted);
+  margin-top: var(--space-lg); /* Space above the note */
+  text-align: center;
+  border-top: 1px solid var(--surface-muted); /* Consistent separator */
+  padding-top: var(--space-md); /* Space above text after separator */
+  font-style: italic;
+}
+
+
+/* Animations - Consistent */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Adjustments - Consistent with BA/BSC/MA */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .bca-wrapper {
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bca-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  .bca-content {
+     gap: var(--space-lg);
+  }
+
+  .bca-content > p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .bca-card {
+    padding: var(--space-xl);
+    gap: var(--space-lg); /* Reduce gap between sections */
+  }
+
+  .bca-details h2,
+  .bca-highlights h3 {
+     font-size: clamp(1.4rem, 4vw, 1.7rem);
+     margin-bottom: var(--space-md);
+  }
+
+  .bca-details li,
+  .bca-highlights li {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-left: var(--space-md); /* Adjust padding for bullet */
+  }
+
+   .bca-details li::before,
+   .bca-highlights li::before {
+      left: 0; /* Keep bullet aligned left */
+   }
+
+  .bca-footer-note {
+     font-size: 0.95rem;
+     margin-top: var(--space-lg);
+     padding-top: var(--space-md);
+  }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (max-width: 768px) {
+  .bca-wrapper {
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-md);
+  }
+
+  .bca-header h1 {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+
+   .bca-content {
+     gap: var(--space-md);
+   }
+
+  .bca-content > p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .bca-card {
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-md); /* Reduce gap further */
+  }
+
+  .bca-details,
+  .bca-highlights {
+     padding: var(--space-md);
+  }
+
+  .bca-details h2,
+  .bca-highlights h3 {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+  }
+
+  .bca-details h2::after,
+  .bca-highlights h3::after { /* Center the underline */
+     left: 50%;
+     transform: translateX(-50%);
+  }
+
+  .bca-details ul,
+  .bca-highlights ul {
+     margin-top: var(--space-md); /* Add some space above lists */
+  }
+
+  .bca-details li,
+  .bca-highlights li {
+     padding-left: var(--space-md); /* Adjust padding for bullet */
+     font-size: 0.95rem;
+     margin-bottom: var(--space-xs);
+  }
+
+  .bca-details li::before,
+  .bca-highlights li::before {
+     left: 0; /* Keep bullet aligned left */
+     top: 0;
+     font-size: 1.1em;
+  }
+
+  .bca-footer-note {
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .bca-wrapper {
+    margin: var(--space-md) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .bca-header h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .bca-content {
+     gap: var(--space-md);
+  }
+
+  .bca-content > p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .bca-card {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bca-details,
+  .bca-highlights {
+     padding: var(--space-sm);
+  }
+
+  .bca-details h2,
+  .bca-highlights h3 {
+    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+  }
+
+  .bca-details ul,
+  .bca-highlights ul {
+     margin-top: var(--space-sm); /* Reduce space above lists */
+  }
+
+  .bca-details li,
+  .bca-highlights li {
+     padding-left: var(--space-sm); /* Adjust padding for bullet */
+     font-size: 0.9rem;
+     margin-bottom: var(--space-xs);
+  }
+
+   .bca-details li::before,
+   .bca-highlights li::before {
+     left: 0; /* Keep bullet aligned left */
+     top: 0;
+     font-size: 1em;
+   }
+
+  .bca-footer-note {
+    font-size: 0.85rem;
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+  }
+}

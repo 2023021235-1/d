@@ -1,0 +1,508 @@
+/* styles/Ma.css - Styled like BA.css and BSC.css */
+
+/* Import or define variables from a shared file if available.
+   For this example, including them directly for completeness. */
+:root {
+  /* Core Branding - Consistent palette */
+  --brand-primary: #1a535c; /* Deep Teal/Green */
+  --brand-secondary: #4ecdc4; /* Lighter Minty Green */
+  --brand-accent: #ff6b6b;   /* Soft Coral/Terracotta Accent */
+
+  /* Neutral Palette - Consistent */
+  --surface: #ffffff;
+  --surface-alt: #f0f4f8; /* Slightly more distinct light gray for background */
+  --surface-muted: #dbe2ef; /* Lighter gray for borders, dividers */
+
+  /* Text Palette - Consistent */
+  --text-main: #2d3a46; /* Darker, softer black for primary text */
+  --text-muted: #5a6773; /* Medium gray for secondary text */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+
+  /* Shadows - Consistent */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  /* Typography - Consistent */
+  --font-header: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing - Consistent */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Transitions & Borders - Consistent */
+  --transition-speed: 0.4s;
+  --transition-timing: ease-in-out;
+  --transition-main: all var(--transition-speed) var(--transition-timing);
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 20px;
+}
+
+/* Global Reset & Base Styles - Consistent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface-alt);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Wrapper & Layout - Consistent with BA/BSC */
+.ma-wrapper {
+  max-width: 1200px;
+  margin: var(--space-xxl) auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg); /* Gap between header and card */
+}
+
+.ma-header p {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem); /* Responsive */
+  color: var(--text-muted);
+  max-width: 750px; /* Optimal reading width */
+  /* margin: 0 auto 1rem auto; Centering and bottom margin */
+  line-height: 1.5;
+}
+
+/* Header Section - Consistent with BA/BSC */
+.ma-header {
+  text-align: center;
+  margin-bottom: var(--space-lg); /* Less margin as gap is on wrapper */
+  animation: fadeInDown 0.8s var(--transition-timing) forwards;
+}
+
+.ma-header h1 {
+  font-family: var(--font-header);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  /*Consistentheadingsize*/color: var(--brand-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.8px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color: #ffa000;
+  -moz-text-decoration-color: #ffa000;
+}
+
+/* Card Container - Main Content Block - Consistent with BA/BSC */
+.ma-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xl) var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-main);
+  animation: fadeInUp 0.8s var(--transition-timing) 0.2s backwards;
+  border: 1px solid var(--surface-muted);
+  width: 100%; /* Ensure it takes full wrapper width */
+  max-width: 1200px; /* Max width from your original MA.css */
+}
+
+/* Content Area within Card - Consistent with BSC */
+.ma-content {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.ma-content p {
+    margin-bottom: var(--space-md); /* Add space between paragraphs */
+}
+
+.ma-content p:last-of-type {
+    margin-bottom: 0; /* Remove bottom margin on the last paragraph */
+}
+
+
+.ma-content strong {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+
+/* Subject Groups List - Consistent with BSC subject groups */
+.ma-subject-groups {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+}
+
+.ma-subject-groups li {
+  position: relative;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-main);
+  font-weight: 600;
+  border-bottom: 1px dashed var(--surface-muted);
+  line-height: 1.5;
+}
+
+.ma-subject-groups li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.ma-subject-groups li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: var(--space-sm);
+  color: #ffa000;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.ma-subject-groups strong {
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+/* Divider - Consistent with BSC divider */
+.ma-divider {
+  margin: var(--space-xl) auto;
+  border: none;
+  border-top: 4px solid  #ffa000;
+  width: 80px;
+  border-radius: 2px;
+}
+
+/* Details Section - Consistent with BSC */
+.ma-details {
+    margin-bottom: var(--space-lg);
+}
+
+.ma-details p {
+  margin: var(--space-xs) 0;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.ma-details strong {
+    color: var(--brand-primary);
+}
+
+
+/* Admission Process Section - Consistent with BSC */
+.ma-admission {
+    margin-bottom: var(--space-lg);
+}
+
+.ma-admission h3 { /* Consistent heading style */
+  font-family: var(--font-header);
+  font-size: clamp(1.6rem, 3.5vw, 1.9rem);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+}
+
+.ma-admission ol {
+  padding-left: var(--space-lg);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.ma-admission ol li {
+    margin-bottom: var(--space-xs);
+}
+
+
+/* CTA Buttons - Consistent with BSC */
+.ma-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: var(--space-xl) 0;
+  justify-content: center;
+}
+
+.ma-btn {
+  background-color: var(--brand-primary);
+  color: var(--text-on-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-main);
+  min-width: 180px;
+  text-align: center;
+}
+
+.ma-btn:hover {
+  background-color: #154147; /* Darker primary on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.ma-btn.outline {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+}
+
+.ma-btn.outline:hover {
+  background-color: #ffa000;
+  color: var(--text-on-primary);
+  border-color: #ffa000;
+  transform: translateY(-2px);
+   box-shadow: var(--shadow-sm);
+}
+
+
+/* Contact Section - Consistent with BSC */
+.ma-contact {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: var(--space-lg);
+  color: var(--text-muted);
+}
+
+.ma-contact a {
+  color: var(--brand-primary); /* Use primary for links */
+  text-decoration: underline;
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.ma-contact a:hover {
+  color: var(--brand-secondary);
+  text-decoration: none;
+}
+
+
+/* Animations - Consistent */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Adjustments - Consistent with BSC */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .ma-wrapper {
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .ma-card {
+    padding: var(--space-xl);
+  }
+
+  .ma-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  .ma-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .ma-admission h3 {
+     font-size: clamp(1.4rem, 4vw, 1.7rem);
+  }
+
+  .ma-btn {
+     padding: 0.6rem 1.2rem;
+     font-size: 1rem;
+     min-width: 160px;
+  }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (max-width: 768px) {
+  .ma-wrapper {
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-md);
+  }
+
+  .ma-header h1 {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+
+  .ma-card {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .ma-content {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .ma-subject-groups li {
+     padding-left: var(--space-lg);
+     font-size: 0.95rem;
+  }
+
+  .ma-subject-groups li::before {
+     top: var(--space-sm);
+     font-size: 1rem;
+  }
+
+  .ma-divider {
+    margin: var(--space-lg) auto;
+  }
+
+  .ma-details p {
+    font-size: 1rem;
+  }
+
+   .ma-admission h3 {
+     font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+
+  .ma-admission ol {
+    padding-left: var(--space-md);
+  }
+
+  .ma-cta {
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+  }
+
+  .ma-btn {
+     padding: 0.7rem 1.4rem;
+     font-size: 0.95rem;
+     min-width: 140px;
+  }
+
+  .ma-contact {
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .ma-wrapper {
+    margin: var(--space-md) auto;
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .ma-header h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .ma-card {
+    padding: var(--space-md);
+  }
+
+  .ma-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .ma-content p {
+      margin-bottom: var(--space-sm); /* Reduce space between paragraphs on small screens */
+  }
+
+  .ma-subject-groups li {
+     padding-left: var(--space-md);
+     font-size: 0.9rem;
+     margin-bottom: var(--space-xs);
+  }
+
+  .ma-subject-groups li::before {
+     top: var(--space-sm);
+     font-size: 0.95rem;
+  }
+
+  .ma-divider {
+     margin: var(--space-md) auto;
+     width: 60px;
+     border-top-width: 3px;
+  }
+
+  .ma-details p {
+    font-size: 0.9rem;
+  }
+
+  .ma-details {
+    margin-bottom: var(--space-md);
+  }
+
+  .ma-admission h3 {
+    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ma-admission ol {
+    padding-left: var(--space-md);
+     line-height: 1.5;
+     margin-bottom: var(--space-md);
+  }
+
+  .ma-admission ol li {
+     margin-bottom: var(--space-xs);
+  }
+
+  .ma-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+
+  .ma-btn {
+    width: 90%;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+
+  .ma-contact {
+    font-size: 0.85rem;
+    margin-top: var(--space-md);
+  }
+}

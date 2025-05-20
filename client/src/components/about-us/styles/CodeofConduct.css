@@ -1,0 +1,64 @@
+.conduct-container {
+  padding: 20px 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(to top left, #ffffff, #f3f5f9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Header */
+.head-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a2c58;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1.3px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.head-title::after {
+ content: "";
+  display: block;
+  width: 80px;
+  height: 3px; /* Thinner orange line */
+  background-color: #f29100;
+  margin: 2px auto 0;
+  border-radius: 2px;
+}
+
+/* Content */
+.page-content {
+  font-size: 17px;
+  line-height: 1.9;
+  text-align: justify;
+  padding: 2 10px;
+}
+
+/* Sections */
+.section {
+  margin-top: 30px;
+}
+
+.section-title {
+  color: #044107;
+  font-size: 22px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+}
+
+/* Custom List */
+.custom-list {
+  padding-left: 20px;
+  margin-top: 10px;
+  list-style-type: disc;
+}
+
+.custom-list li {
+  margin-bottom: 12px;
+  color: #455a64;
+}

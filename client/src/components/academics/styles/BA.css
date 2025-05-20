@@ -1,0 +1,363 @@
+/* styles/BA.css */
+
+:root {
+  /* Core Branding - New Palette (Using your well-chosen palette) */
+  --brand-primary: #1a535c; /* Deep Teal/Green */
+  --brand-secondary: #4ecdc4; /* Lighter Minty Green */
+  --brand-accent: #ff6b6b;   /* Soft Coral/Terracotta Accent */
+
+  /* Neutral Palette - Refined */
+  --surface: #ffffff;
+  --surface-alt: #f7f9f9;   /* Very light, almost white gray */
+  --surface-muted: #e8eaed; /* Light gray for borders, dividers - slightly adjusted for subtlety */
+
+  /* Text Palette */
+  --text-main: #333333;     /* Darker gray for primary text */
+  --text-muted: #5f6368;   /* Medium gray for secondary text - slightly adjusted */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+
+  /* Shadows - Subtly adjusted for new palette */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.07); /* Slightly softened */
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.07), 0 3px 6px rgba(0,0,0,0.05); /* Slightly softened */
+
+  /* Typography - Keeping Merriweather and Inter, good choices! */
+  --font-header: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Transitions & Borders */
+  --transition-speed: 0.3s;
+  --transition-timing: ease-in-out;
+  --transition-main: all var(--transition-speed) var(--transition-timing);
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px; /* Adjusted for a sleeker look */
+  --border-radius-lg: 20px;
+}
+
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface-alt);
+  line-height: 1.7; /* Slightly increased for body text readability */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+.Bainfo{
+text-align: center;
+margin-bottom: 40px;
+margin-top: 0px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+
+}
+
+/* Wrapper */
+.ba-wrapper {
+  background-color: transparent; /* Let body background show or set to var(--surface-alt) */
+  font-family: var(--font-body);
+  color: var(--text-main);
+  max-width: 1200px; /* Consistent max-width */
+  margin: 3rem auto; /* Centering and top/bottom margin */
+  border-radius: var(--border-radius-lg);
+}
+
+/* Header Section */
+.ba-header {
+  text-align: center;
+  margin-bottom: 4rem; /* Increased spacing */
+  animation: fadeIn 0.8s var(--transition-timing) forwards;
+}
+
+.ba-header h1 {
+  font-family: var(--font-header);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  /*Responsiveandimpactful*/color: var(--brand-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  /*Subtlerefinement*/font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color:  #ffa000;
+}
+
+.ba-header p {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem); /* Responsive */
+  color: var(--text-muted);
+  max-width: 750px; /* Optimal reading width */
+  margin: 0 auto 1rem auto; /* Centering and bottom margin */
+  line-height: 1.5;
+}
+
+/* Card Container */
+.ba-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius-lg);
+  padding: 3rem 3rem; /* Generous padding */
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-main);
+  animation: fadeInUp 0.8s var(--transition-timing) 0.2s backwards;
+  border: 1px solid var(--surface-muted);
+}
+
+/* Statistics Row */
+.ba-stats {
+  display: flex;
+  gap: 1.5rem; /* Good spacing between items */
+  flex-wrap: wrap;
+  justify-content: center; /* Center items if they don't fill the row */
+  margin-bottom: 3.5rem; /* Spacing before next section */
+}
+
+.ba-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  font-weight: 500;
+  color: var(--text-main);
+  transition: var(--transition-main);
+  flex: 1 1 200px; /* Allow items to grow and shrink, with a base size */
+  min-width: 180px; /* Prevent items from becoming too small */
+  border: 1px solid transparent; /* Prepare for hover border */
+}
+
+.ba-stat-item svg {
+  color: var(--brand-accent);
+  margin-bottom: 0.5rem;
+  transition: var(--transition-main);
+  width: 30px; /* Consistent icon size */
+  height: 30px;
+}
+
+.ba-stat-item:hover {
+  background: #ffa000;
+  color: var(--text-on-primary);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: var(--shadow-lg);
+  border-color: #ffa000;
+}
+
+.ba-stat-item:hover svg {
+  color: var(--text-on-primary); /* or #ffa000 for a pop */
+  transform: scale(1.1);
+}
+
+.ba-stat-item strong { /* General strong tag inside stat item */
+  color: inherit;
+  font-weight: 600; /* Ensure it's bolder than regular text */
+}
+
+.ba-stat-item span {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Styling for the number within the stat item, e.g., "10" */
+.ba-stat-item span strong { /* This specifically targets the number */
+  display: block;
+  font-size: 1.75rem; /* Prominent number */
+  color: #ffa000;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  transition: color var(--transition-speed) var(--transition-timing); /* Only transition color */
+}
+
+.ba-stat-item:hover span strong {
+  color: var(--text-on-primary); /* Or keep it var(--brand-secondary) for contrast on hover */
+}
+
+
+/* Card Text - General paragraph styling within the card */
+.ba-card > p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  text-align:justify;
+  margin-top: 2.5rem; /* More space above the final paragraph */
+}
+
+.ba-card strong {
+  color: var(--brand-primary);
+  font-weight: 600; /* Slightly less heavy than 700 for inline strong */
+}
+
+/* Section Heading within Card */
+.ba-card h2 {
+  font-family: var(--font-header);
+  font-size: clamp(1.5rem, 3.5vw, 1.85rem); /* Responsive heading size */
+  color: var(--brand-primary);
+  margin: 0 0 1.75rem; /* Top margin is handled by previous element's bottom margin */
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid #ffa000; /* Underline effect */
+  display: inline-block; /* To make border-bottom only as wide as text */
+}
+
+
+/* Subject Grid */
+.ba-subject-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem; /* Spacing before the final paragraph */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Space between items */
+}
+
+.ba-subject-grid li {
+  background: var(--surface-alt); /* Slightly different background for items */
+  border: 1px solid var(--surface-muted);
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--brand-primary);
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-main);
+  box-shadow: var(--shadow-sm);
+  cursor: default; /* Or pointer if they are clickable */
+  text-align: center; /* Center text within list items */
+}
+
+.ba-subject-grid li:hover {
+  background-color: #ffa000;
+  color: var(--text-on-primary); /* Ensure text is readable */
+  border-color: transparent; /* Remove border or match background */
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) { /* Tablets */
+  .ba-wrapper {
+    padding: 4rem 1.5rem;
+    margin: 2rem auto;
+  }
+  .ba-card {
+    padding: 2.5rem;
+  }
+  .ba-subject-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 768px) { /* Small devices (landscape phones, small tablets) */
+  .ba-wrapper {
+    padding: 3rem 1rem;
+    margin: 1.5rem auto;
+  }
+  .ba-header h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+  }
+  .ba-header p {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+  }
+  .ba-card {
+    padding: 2rem 1.5rem;
+  }
+  .ba-stats {
+    gap: 1.25rem;
+    /* Items will naturally stack due to flex-basis and flex-grow behavior
+       or you can uncomment flex-direction: column; if you want strict stacking.
+       If stacking, ensure .ba-stat-item has width: 100%; or similar. */
+  }
+   .ba-stat-item {
+     flex-basis: 100%; /* Ensure they take full width when wrapping to new line if not enough space */
+   }
+
+  .ba-card h2 {
+    font-size: clamp(1.4rem, 4.5vw, 1.7rem);
+    text-align: center; /* Center heading on small screens */
+    display: block; /* Allow text-align center to work and border to span width */
+    border-bottom-width: 2px; /* Make underline consistent */
+  }
+
+  .ba-subject-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .ba-subject-grid li {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) { /* Extra small devices (portrait phones) */
+  html {
+    font-size: 15px; /* Slightly reduce base font for very small screens */
+  }
+  .ba-wrapper {
+    padding: 2.5rem 1rem; /* Reduce padding further */
+    margin: 1rem auto;
+    border-radius: var(--border-radius-md);
+  }
+  .ba-header h1 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+  .ba-header p,
+  .ba-card > p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  .ba-card {
+    padding: 1.5rem 1rem;
+  }
+  .ba-stat-item {
+    padding: 1.25rem;
+    gap: 0.5rem;
+  }
+  .ba-stat-item span {
+    font-size: 0.85rem;
+  }
+  .ba-stat-item span strong {
+    font-size: 1.5rem;
+  }
+  .ba-card h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.5rem);
+    padding-bottom: 0.6rem;
+  }
+  .ba-subject-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ensure items don't get too small */
+    gap: 0.75rem;
+  }
+  .ba-subject-grid li {
+    padding: 0.9rem 1rem;
+    font-size: 0.85rem;
+    border-radius: var(--border-radius-sm);
+  }
+}

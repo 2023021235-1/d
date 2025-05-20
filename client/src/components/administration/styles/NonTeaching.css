@@ -1,0 +1,81 @@
+.non-teaching-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 0.1rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #222;
+}
+
+.non-teaching-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 2vw + 1.5rem, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #0a2c58;
+  font-weight: 700;
+}
+.non-teaching-title::after{
+   content: "";
+  display: block;
+  width: 80px;
+  height: 3px; /* Thinner orange line */
+  background-color: #f29100;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2.2rem 0 1.5rem;
+  padding-left: 0.5rem;
+  /* border-left: 5px solid #003366; */
+  color: #003366;
+  font-family: 'Merriweather', serif;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.staff-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #003366;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.staff-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.staff-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1a1a1a;
+}
+
+.staff-role {
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive 2-column for tablets and above */
+@media (min-width: 768px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3-column for desktops */
+@media (min-width: 1024px) {
+  .staff-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
