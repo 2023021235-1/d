@@ -35,8 +35,8 @@ import ResearchInnovation from './components/administration/Research';
 import AlumniAssoc from './components/alumini/alumniassoc';
 import AlumniReg from './components/alumini/alumnireg';
 import CCorner from './components/CCorner';
-import Syllabus from './components/Syllabus';
-import TimeTable from './components/Timetable';
+import Syllabus from './components/syllabus';
+import TimeTable from './components/timetable';
 import NotAvailable from './components/Na';
 import AdmissionForm from './components/Registration';
 function App() {
